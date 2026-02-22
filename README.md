@@ -1,103 +1,125 @@
-# AstroPaper 📄
+# John's Engineering Blog 🚀
 
-![AstroPaper](public/astropaper-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
+![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+A personal blog site to record my findings, thoughts, and experiences around all things related to software engineering, architecture, and building software using AI.
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+This blog is built with [Astro](https://astro.build/), a modern static site generator with excellent performance and developer experience. Read [the blog posts](./src/data/blog/) for articles on engineering topics.
 
-## 🔥 Features
+## ✨ Features
 
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] fuzzy search
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
+- ⚡ Super fast performance with Astro
+- 📱 Responsive design (mobile to desktop)
+- ♿ Accessible (Keyboard/VoiceOver support)
+- 🔍 SEO-friendly with dynamic OG image generation
+- 🌓 Light & dark mode toggle
+- 🔎 Fuzzy search across all posts
+- 📝 Draft posts & pagination support
+- 📡 Sitemap & RSS feed
+- 🎨 Customizable TypeScript-based configuration
+- 📐 Type-safe Markdown for blog posts
 
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
+## 📚 Getting Started
 
-## ✅ Lighthouse Score
+### Prerequisites
 
-<p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
-  </a>
-</p>
+- Node.js 18+ 
+- pnpm (or npm/yarn)
+
+### Installation & Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+
+The site will be available at `http://localhost:3000`
+
+### Building for Production
+
+```bash
+# Build the static site
+pnpm build
+
+# Preview the production build locally
+pnpm preview
+```
+
+## 📝 Writing Blog Posts
+
+Blog posts are stored in `src/data/blog/` as Markdown files. Each post should include front matter with:
+
+```yaml
+---
+title: "Your Post Title"
+description: "Brief description of the post"
+pubDatetime: 2026-02-22T10:00:00Z
+author: "John Glista"
+featured: false
+draft: false
+tags:
+  - engineering
+  - software-architecture
+---
+```
+
+See [src/data/blog/adding-new-post.md](src/data/blog/adding-new-post.md) for detailed instructions.
 
 ## 🚀 Project Structure
 
-Inside of AstroPaper, you'll see the following folders and files:
-
 ```bash
 /
-├── public/
-│   ├── pagefind/ # auto-generated when build
-│   ├── favicon.svg
-│   └── astropaper-og.jpg
+├── public/              # Static assets
 ├── src/
-│   ├── assets/
-│   │   ├── icons/
-│   │   └── images/
-│   ├── components/
+│   ├── assets/         # Images and icons
+│   ├── components/     # Reusable Astro components
 │   ├── data/
-│   │   └── blog/
-│   │       └── some-blog-posts.md
-│   ├── layouts/
-│   ├── pages/
-│   ├── scripts/
-│   ├── styles/
-│   ├── utils/
-│   ├── config.ts
-│   ├── constants.ts
-│   ├── content.config.ts
-│   ├── env.d.ts
-│   └── remark-collapse.d.ts
-└── astro.config.ts
+│   │   └── blog/       # Blog posts (markdown files)
+│   ├── layouts/        # Page templates
+│   ├── pages/          # Routes (auto-generated from file structure)
+│   ├── scripts/        # Client-side scripts
+│   ├── styles/         # Global CSS and typography
+│   ├── utils/          # Utility functions
+│   ├── config.ts       # Blog configuration
+│   ├── constants.ts    # App constants
+│   └── content.config.ts # Content management config
+├── astro.config.ts     # Astro configuration
+└── tsconfig.json       # TypeScript configuration
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-All blog posts are stored in `src/data/blog` directory.
-
-## 📖 Documentation
-
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
-
-- Configuration - [markdown](src/data/blog/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/data/blog/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/data/blog/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/data/blog/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
 
 ## 💻 Tech Stack
 
-**Main Framework** - [Astro](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma Design File](https://www.figma.com/community/file/1356898632249991861)  
-**Static Search** - [FuseJS](https://pagefind.app/)  
-**Icons** - [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
-**Linting** - [ESLint](https://eslint.org)
+| Category | Technology |
+|----------|-----------|
+| **Framework** | [Astro](https://astro.build/) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) |
+| **Styling** | [TailwindCSS](https://tailwindcss.com/) |
+| **Search** | [Pagefind](https://pagefind.app/) |
+| **Icons** | [Tabler Icons](https://tabler-icons.io/) |
+| **Code Formatting** | [Prettier](https://prettier.io/) |
+| **Linting** | [ESLint](https://eslint.org) |
+| **Git Commits** | [Commitizen](http://commitizen.github.io/cz-cli/) |
 
-## 👨🏻‍💻 Running Locally
+## 🚢 Deployment
 
-You can start using this project locally by running the following command in your desired directory:
+This blog can be deployed to any static site host. Popular options include:
+
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+- [Vercel](https://vercel.com/)
+- [Netlify](https://netlify.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+The build is fully static with no server-side dependencies, making it easy to deploy anywhere.
+
+## 📄 License
+
+This project is based on the [AstroPaper](https://github.com/satnaing/astro-paper) theme by [Sat Naing](https://satnaing.dev).
 
 ```bash
 # pnpm
