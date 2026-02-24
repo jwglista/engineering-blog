@@ -1,10 +1,10 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://codemode.blog/",
   author: "John Glista",
   profile: "",
   desc: "A blog capturing my learnings on software development, AI, and other tech topics.",
   title: "John's Tech Blog",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "codemode-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
@@ -19,5 +19,5 @@ export const SITE = {
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
   lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timezone: "America/New_York", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;
